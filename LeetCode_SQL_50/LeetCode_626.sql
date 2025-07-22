@@ -17,3 +17,18 @@ new AS(
 SELECT rn AS id,student
 FROM new
 
+--WITHOUT using ROW_NUMBER()
+WITH cte AS(
+    SELECT *,
+    CASE
+        WHEN id % 2 =  0 THEN id - 1
+        WHEN id = (SELECT MAX(id) FROM Seat) THEN id
+        ELSE id + 1
+    END AS new_id
+    FROM Seat
+)
+
+SELECT new_id AS id, student
+FROM cte
+ORDER BY new_id
+
