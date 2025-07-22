@@ -23,8 +23,11 @@ ON cte.category = cat.category
 GROUP BY cat.category
 
 
--- SELECT category , COUNT(category) AS accounts_count
+--WE can also create category with UNION
 
--- FROM cte
--- GROUP BY category
+--WITH category AS (
+--    SELECT 'Low Salary' AS category
+--    UNION ALL SELECT 'Average Salary'
+--    UNION ALL SELECT 'High Salary'
+--)
 
