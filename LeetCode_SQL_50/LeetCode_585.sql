@@ -39,3 +39,5 @@ WHERE pid IN(
 )
 
 
+-- this solution is N(LOG N) , We can improve it a bit by using joins instead of Intersect
+--O(N) solution is possible if JOIN and GROUP BY is hashed
